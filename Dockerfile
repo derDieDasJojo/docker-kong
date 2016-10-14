@@ -1,5 +1,5 @@
 FROM centos:7
-MAINTAINER Marco Palladino, marco@mashape.com
+MAINTAINER Jojo, jojo@openparse.io
 
 ENV KONG_VERSION 0.9.3
 

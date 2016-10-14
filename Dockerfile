@@ -12,5 +12,7 @@ RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
+ADD piwik-log /usr/local/share/lua/5.1/kong/plugins/piwik-log/
+
 EXPOSE 8000 8443 8001 7946
 CMD ["kong", "start"]

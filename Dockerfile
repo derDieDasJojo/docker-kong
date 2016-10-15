@@ -9,6 +9,11 @@ RUN yum install -y wget https://github.com/Mashape/kong/releases/download/$KONG_
 RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.1.3/dumb-init_1.1.3_amd64 && \
     chmod +x /usr/local/bin/dumb-init
 
+#RUN mkdir -p /usr/local/kong/logs
+#RUN ln -sf /dev/sterr /usr/local/kong/logs/error.log
+#RUN ln -sf /dev/stdout /usr/local/kong/logs/access.log
+env KONG_NGINX_DAEMON="off"
+
 ADD piwik-log /usr/local/share/lua/5.1/kong/plugins/piwik-log/
 
 EXPOSE 8000 8443 8001 7946

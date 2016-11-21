@@ -15,6 +15,7 @@ RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/
 env KONG_NGINX_DAEMON="off"
 
 ADD piwik-log /usr/local/share/lua/5.1/kong/plugins/piwik-log/
+ADD rate-limiting /usr/local/share/lua/5.1/kong/plugins/rate-limiting/
 
 EXPOSE 8000 8443 8001 7946
 CMD ["kong", "start"]

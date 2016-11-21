@@ -28,6 +28,8 @@ local function get_identifier(conf)
     end
   elseif conf.limit_by == "credential" then
     identifier = ngx.ctx.authenticated_credential and ngx.ctx.authenticated_credential.id
+	elseif conf.limit_by == "all" then
+	  identifier = 1
   end
 
   if not identifier then identifier = ngx.var.remote_addr end
